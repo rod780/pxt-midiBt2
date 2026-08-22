@@ -1,0 +1,24 @@
+{
+    "name": "microbit-v2-ble-midi",
+    "version": "0.0.1",
+    "description": "Contrôleur BLE-MIDI natif et autonome pour micro:bit V2",
+    "dependencies": {
+        "core": "*",
+        "bluetooth": "*"
+    },
+    "files": [
+        "README.md",
+        "midi.ts",
+        "midi.cpp"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "6.0.0"
+    },
+    "cppAndCodal": true,
+    "features": [
+        "v2"
+    ]
+}
