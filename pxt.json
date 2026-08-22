@@ -4,7 +4,7 @@
     "description": "Contrôleur BLE-MIDI natif et autonome pour micro:bit V2",
     "dependencies": {
         "core": "*",
-        "bluetooth": "*"
+        "bluetooth": "architecture-relative-ou-version"
     },
     "files": [
         "README.md",
