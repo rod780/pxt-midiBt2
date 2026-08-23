@@ -1,6 +1,6 @@
 {
     "name": "microbit-v2-ble-midi",
-    "version": "0.0.4",
+    "version": "0.0.6",
     "description": "Contrôleur BLE-MIDI natif et autonome pour micro:bit V2",
     "dependencies": {
         "core": "*",
