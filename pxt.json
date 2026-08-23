@@ -1,6 +1,6 @@
 {
     "name": "microbit-v2-ble-midi",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "Contrôleur BLE-MIDI natif et autonome pour micro:bit V2",
     "dependencies": {
         "core": "*",
@@ -23,5 +23,15 @@
     ],
     "disablesVariants": [
         "mbdal"
-    ]
+    ],
+    "yotta": {
+        "config": {
+            "MICROBIT_BLE_ENABLED": 1,
+            "MICROBIT_BLE_PAIRING_MODE": 0,
+            "MICROBIT_BLE_OPEN": 1,
+            "MICROBIT_BLE_DFU_SERVICE": 0,
+            "MICROBIT_BLE_EVENT_SERVICE": 0,
+            "MICROBIT_BLE_DEVICE_INFORMATION_SERVICE": 1
+        }
+    }
 }
