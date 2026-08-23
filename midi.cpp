@@ -1,42 +1,41 @@
 #include "pxt.h"
-#include "MicroBitConfig.h"
+#include "MicroBit.h" // Obligatoire pour utiliser uBit
 
 namespace bleMidi {
     bool initialized = false;
 
+    // L'attribut //% ci-dessous est STRICTEMENT obligatoire pour MakeCode
+    //%
     void init() {
         if (initialized) return;
 
-        #if MICROBIT_CODAL
-            // Réveille l'antenne publicitaire Bluetooth de la V2
-            uBit.bleManager.advertise();
-        #endif
+        // CODAL V2 initialise automatiquement la pile BLE et l'advertising.
+        // Si vous devez instancier votre service GATT MIDI spécifique,
+        // c'est ici qu'il faudra le déclarer (ex: new MicroBitMidiService(*uBit.ble);)
 
         initialized = true;
     }
 
+    //%
     void sendNoteOn(int channel, int note, int velocity) {
         if (!initialized) init();
 
-        // Élimine de manière standard le warning "Unused parameter" qui fait planter MakeCode
+        // Neutralise proprement le warning "Unused parameter" 
         (void)channel;
         (void)note;
         (void)velocity;
 
-        #if MICROBIT_CODAL
-            // Le tampon d'exécution sera branché ici après validation de la structure
-        #endif
+        // Le code CODAL d'envoi du paquet MIDI sera intégré ici
     }
 
+    //%
     void sendNoteOff(int channel, int note) {
         if (!initialized) init();
 
-        // Élimine de manière standard le warning "Unused parameter" qui fait planter MakeCode
+        // Neutralise proprement le warning "Unused parameter"
         (void)channel;
         (void)note;
 
-        #if MICROBIT_CODAL
-            // Le tampon d'exécution sera branché ici après validation de la structure
-        #endif
+        // Le code CODAL d'envoi du paquet MIDI sera intégré ici
     }
 }
