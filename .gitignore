@@ -1,1 +1,11 @@
-# Initial
+# Dépendances et builds locaux
+node_modules/
+yotta_modules/
+yotta_targets/
+build/
+pxt_modules/
+
+# Fichiers système et configuration locale
+.pxt/
+*.log
+.DS_Store
