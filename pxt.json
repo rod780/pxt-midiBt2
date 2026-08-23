@@ -4,12 +4,13 @@
     "description": "Contrôleur BLE-MIDI natif et autonome pour micro:bit V2",
     "dependencies": {
         "core": "*",
-        "bluetooth": "architecture-relative-ou-version"
+        "bluetooth": "*"
     },
     "files": [
         "README.md",
         "midi.ts",
-        "midi.cpp"
+        "midi.cpp",
+        "shims.d.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -20,5 +21,8 @@
     "cppAndCodal": true,
     "features": [
         "v2"
+    ],
+    "disablesVariants": [
+        "mbdal"
     ]
 }
