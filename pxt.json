@@ -9,8 +9,7 @@
     "files": [
         "README.md",
         "midi.ts",
-        "midi.cpp",
-        "shims.d.ts"
+        "midi.cpp"
     ],
     "testFiles": [
         "test.ts"
