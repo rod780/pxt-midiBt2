@@ -2,22 +2,22 @@
 namespace bleMidi {
     
     //% block="initialiser le service BLE-MIDI"
-    //% shim=bleMidi::init
-    export function init(): void {
-        console.log("BLE-MIDI : Service initialisé (Simulateur)");
+    //% shim=bleMidi::initBleMidi
+    export function initBleMidi(): void {
+        return; // Strictement vide pour ne pas interférer avec le Bluetooth natif
     }
 
     //% block="envoyer Note On canal %channel note %note velocite %velocity"
     //% channel.min=1 channel.max=16 note.min=0 note.max=127 velocity.min=0 velocity.max=127
-    //% shim=bleMidi::sendNoteOn
-    export function sendNoteOn(channel: number, note: number, velocity: number): void {
-        console.log(`MIDI Out -> Note On | Canal: ${channel} | Note: ${note} | Vel: ${velocity}`);
+    //% shim=bleMidi::sendMidiNoteOn
+    export function sendMidiNoteOn(channel: number, note: number, velocity: number): void {
+        return;
     }
 
     //% block="envoyer Note Off canal %channel note %note"
     //% channel.min=1 channel.max=16 note.min=0 note.max=127
-    //% shim=bleMidi::sendNoteOff
-    export function sendNoteOff(channel: number, note: number): void {
-        console.log(`MIDI Out -> Note Off | Canal: ${channel} | Note: ${note}`);
+    //% shim=bleMidi::sendMidiNoteOff
+    export function sendMidiNoteOff(channel: number, note: number): void {
+        return;
     }
 }
