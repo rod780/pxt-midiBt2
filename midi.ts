@@ -4,20 +4,20 @@ namespace bleMidi {
     //% block="initialiser le service BLE-MIDI"
     //% shim=bleMidi::init
     export function init(): void {
-        return;
+        console.log("BLE-MIDI : Service initialisé (Simulateur)");
     }
 
     //% block="envoyer Note On canal %channel note %note velocite %velocity"
     //% channel.min=1 channel.max=16 note.min=0 note.max=127 velocity.min=0 velocity.max=127
     //% shim=bleMidi::sendNoteOn
     export function sendNoteOn(channel: number, note: number, velocity: number): void {
-        return;
+        console.log(`MIDI Out -> Note On | Canal: ${channel} | Note: ${note} | Vel: ${velocity}`);
     }
 
     //% block="envoyer Note Off canal %channel note %note"
     //% channel.min=1 channel.max=16 note.min=0 note.max=127
     //% shim=bleMidi::sendNoteOff
     export function sendNoteOff(channel: number, note: number): void {
-        return;
+        console.log(`MIDI Out -> Note Off | Canal: ${channel} | Note: ${note}`);
     }
 }
