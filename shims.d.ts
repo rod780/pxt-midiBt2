@@ -19,5 +19,3 @@ declare namespace bleMidi {
     //% shim=bleMidi::sendNoteOff
     function sendNoteOff(channel: int32, note: int32): void;
 }
-
-// Auto-generated. Do not edit. Everything else is ignored.
