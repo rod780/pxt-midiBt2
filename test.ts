@@ -1,10 +1,15 @@
-// Script de test de l'extension BLE-MIDI
-bleMidi.init()
+// Script de test de l'extension BLE-MIDI V2
+bleMidi.initBleMidi()
 let noteActive = false
 
 basic.forever(function () {
+    // Si on appuie sur le bouton A et qu'aucune note n'est en cours
     if (input.buttonIsPressed(Button.A) && !noteActive) {
-        bleMidi.sendNoteOn(1, 60, 127) // Envoie un Do4 (Note 60)
+        
+        // Appel de la fonction renommée pour envoyer un Do4 (Note 60)
+        bleMidi.sendMidiNoteOn(1, 60, 127) 
+        
+        // Affichage d'une flèche vers le haut pour matérialiser le signal Note On
         basic.showLeds(`
             . . # . .
             . # # # .
@@ -14,10 +19,17 @@ basic.forever(function () {
             `)
         noteActive = true
     }
+    // Si on relâche le bouton A alors qu'une note était active
     else if (!input.buttonIsPressed(Button.A) && noteActive) {
-        bleMidi.sendNoteOff(1, 60)
+        
+        // Appel de la fonction renommée pour couper le son
+        bleMidi.sendMidiNoteOff(1, 60)
+        
+        // Efface l'écran LED pour confirmer l'arrêt de la note (Note Off)
         basic.clearScreen()
         noteActive = false
     }
-    basic.pause(10) // Un poil plus de pause soulage le processeur
+    
+    // Petite pause de sécurité pour soulager le processeur de la carte
+    basic.pause(10) 
 })
